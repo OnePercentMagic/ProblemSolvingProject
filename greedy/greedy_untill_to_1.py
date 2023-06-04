@@ -4,18 +4,11 @@ if __name__ == "__main__":
     print(f"N: {N}, M: {M}")
 
     count = 0
-    while N > M:
-        while N % M != 0:
-            N -= 1
-            count += 1
-
-        if N % M == 0:
-            N /= M
-            count += 1
-
-    # when N < M
-    while N > 1:
-        count += 1
-        N -= 1
+    if N < M:
+        count = N - 1
+    else:
+        div, res = divmod(N, M)
+        count += res
+        count += div
 
     print(f"answer: {count}")
