@@ -4,10 +4,9 @@ if __name__ == "__main__":
 
     # 두번째 항목부터 시작해서 삽입정렬 함
     for i in range(1, len(arrs)):
-        for j in range(i, 0, -1):
-            if arrs[j] < arrs[j-1]:
-                arrs[j], arrs[j-1] = arrs[j-1], arrs[j]
-            else:
-                break
+        j = i
+        while j >=1 and arrs[j] < arrs[j-1]:
+            arrs[j-1], arrs[j] = arrs[j], arrs[j-1]
+            j -= 1
 
     print(f"after: {arrs}")
